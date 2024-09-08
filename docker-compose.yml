@@ -19,7 +19,7 @@ services:
     build:
       context: nginx
       args:
-        SSL_PASSWORD: iejahngiivaeZ9Phaem6
+        SSL_PASSWORD: ${SSL_PASSWORD}
     depends_on:
       - gradio-backend
     volumes:
