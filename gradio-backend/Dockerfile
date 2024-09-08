@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/nvidia/cuda/tags?page=&page_size=&ordering=&name=12.4
-FROM docker.io/nvidia/cuda:12.4.0-runtime-ubuntu22.04 AS python-base
+FROM docker.io/nvidia/cuda:12.4.1-runtime-ubuntu22.04 AS python-base
 
 ENV VIRTUAL_ENV=/app/venv
 

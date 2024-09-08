@@ -23,9 +23,9 @@ services:
     depends_on:
       - gradio-backend
     volumes:
-      - ./nginx/default.conf:/opt/bitnami/nginx/conf/server_blocks/default.conf
-      - ./nginx/secure-container.local.crt:/certs/secure-container.local.crt
-      - ./nginx/secure-container.local.key:/certs/secure-container.local.key
-      - ./nginx/.htpasswd:/opt/bitnami/nginx/conf/.htpasswd
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/secure-container.local.crt:/etc/nginx/ssl/secure-container.local.crt
+      - ./nginx/secure-container.local.key:/etc/nginx/ssl/secure-container.local.key
+      - ./nginx/.htpasswd:/etc/nginx/conf/.htpasswd
     ports:
       - 8443:443
