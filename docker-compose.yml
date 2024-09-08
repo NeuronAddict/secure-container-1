@@ -1,0 +1,31 @@
+services:
+  gradio-backend:
+    image: ${REGISTRY}/gradio-backend:${GRADIO_BACKEND_VERSION}
+    build:
+      context: gradio-backend
+      args:
+        VERSION: ${GRADIO_BACKEND_VERSION}
+    volumes:
+      - ${MODEL_PATH}:/app/model
+    environment:
+      MODEL: /app/model
+      MODEL_TYPE: ${MODEL_TYPE}
+      DEVICE: ${DEVICE}
+      GRADIO_ROOT_PATH: ${GRADIO_ROOT_PATH}
+    ports:
+      - 7860:7860
+
+  nginx:
+    build:
+      context: nginx
+      args:
+        SSL_PASSWORD: iejahngiivaeZ9Phaem6
+    depends_on:
+      - gradio-backend
+    volumes:
+      - ./nginx/default.conf:/opt/bitnami/nginx/conf/server_blocks/default.conf
+      - ./nginx/secure-container.local.crt:/certs/secure-container.local.crt
+      - ./nginx/secure-container.local.key:/certs/secure-container.local.key
+      - ./nginx/.htpasswd:/opt/bitnami/nginx/conf/.htpasswd
+    ports:
+      - 8443:443

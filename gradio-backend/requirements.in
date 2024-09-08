@@ -1,0 +1,9 @@
+gradio
+transformers
+pytesseract
+requests
+html2text
+
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch
+torchvision
