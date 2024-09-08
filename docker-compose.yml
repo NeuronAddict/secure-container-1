@@ -13,7 +13,7 @@ services:
       DEVICE: ${DEVICE}
       GRADIO_ROOT_PATH: ${GRADIO_ROOT_PATH}
     ports:
-      - 7860:7860
+      - "127.0.0.1:7860:7860"
 
   nginx:
     build:
@@ -28,4 +28,4 @@ services:
       - ./nginx/secure-container.local.key:/etc/nginx/ssl/secure-container.local.key
       - ./nginx/.htpasswd:/etc/nginx/conf/.htpasswd
     ports:
-      - 8443:443
+      - "127.0.0.1:8443:443"
