@@ -2,3 +2,4 @@
 .env
 nginx/secure-container.local.*
 .htpasswd
+nginx/ssl-password.txt
