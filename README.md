@@ -9,6 +9,7 @@ $ cd -
 $ cd nginx
 $ bash mkcert.sh
 $ # choisir un mot de passe et le mettre dans le docker compose
+$ htpasswd -cB .htpasswd alice # add a secure password
 $ cd -
 $ cp .env.example .env # custom if needed
 $ docker compose up --build # or docker-compose up --build
