@@ -1,5 +1,7 @@
 # secure container demo
 
+Vidéo : https://youtu.be/4lvhDjwLgUU
+
 ## How to
 
 ```
@@ -17,7 +19,7 @@ $ docker compose up --build # or docker-compose up --build
 
 L'application est disponible sur le port 8443 en https.
 
-## Certificat 
+## Erreur de certificat dans le navigateur
 
 Solution facile : Accepter le certificat quand le navigateur le demande
 Solution propre : Ajouter le certificat dans firefox. Conseil : le faire sur une session à part.
