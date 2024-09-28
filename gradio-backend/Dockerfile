@@ -45,6 +45,6 @@ COPY app.py .
 
 EXPOSE 7860
 
-USER 1001
+USER 1234
 
 ENTRYPOINT ["python", "-I", "app.py", "--local-file-only"]
